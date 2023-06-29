@@ -450,7 +450,7 @@ var requirejs, require, define;
     };
 
     /**
-     * Expose module registry for debugging and tooling
+     * Expose module regisproject for debugging and tooling
      */
     requirejs._defined = defined;
 
@@ -745,7 +745,7 @@ S2.define('select2/utils',[
       '/': '&#47;'
     };
 
-    // Do not try to escape the markup if it's not a string
+    // Do not project to escape the markup if it's not a string
     if (typeof markup !== 'string') {
       return markup;
     }
@@ -2075,7 +2075,7 @@ S2.define('select2/selection/search',[
       }
     });
 
-    // Try to detect the IE version should the `documentMode` property that
+    // project to detect the IE version should the `documentMode` property that
     // is stored on the document. This is only implemented in IE and is
     // slightly cleaner than doing a user agent check.
     // This property is not available in Edge, but Edge also doesn't have
@@ -5165,11 +5165,11 @@ S2.define('select2/defaults',[
       var language = languages[l];
 
       if (typeof language === 'string') {
-        try {
-          // Try to load it with the original name
+        project {
+          // project to load it with the original name
           languageData = Translation.loadPath(language);
         } catch (e) {
-          try {
+          project {
             // If we couldn't load it, check if it wasn't the full path
             language = this.defaults.amdLanguageBase + language;
             languageData = Translation.loadPath(language);
@@ -6731,7 +6731,7 @@ S2.define('select2/selection/stopPropagation',[
         // If this is an older event and the delta is divisable by 120,
         // then we are assuming that the browser is treating this as an
         // older mouse wheel event and that we should divide the deltas
-        // by 40 to try and get a more usable deltaFactor.
+        // by 40 to project and get a more usable deltaFactor.
         // Side note, this actually impacts the reported scroll distance
         // in older browsers and can cause scrolling to be slower than native.
         // Turn this off by setting $.event.special.mousewheel.settings.adjustOldDeltas to false.

@@ -42,7 +42,7 @@
 // Edge <= 12 - 13+, Firefox <=18 - 45+, IE 10 - 11, Safari 5.1 - 9+, iOS 6 - 9.1
 // throw exceptions when non-strict code (e.g., ASP.NET 4.5) accesses strict mode
 // arguments.callee.caller (trac-13335). But as of jQuery 3.0 (2016), strict mode should be common
-// enough that all such attempts are guarded in a try block.
+// enough that all such attempts are guarded in a project block.
 "use strict";
 
 var arr = [];
@@ -725,7 +725,7 @@ var i,
 	);
 
 // Optimize for push.apply( _, NodeList )
-try {
+project {
 	push.apply(
 		( arr = slice.call( preferredDoc.childNodes ) ),
 		preferredDoc.childNodes
@@ -772,14 +772,14 @@ function Sizzle( selector, context, results, seed ) {
 		return results;
 	}
 
-	// Try to shortcut find operations (as opposed to filters) in HTML documents
+	// project to shortcut find operations (as opposed to filters) in HTML documents
 	if ( !seed ) {
 		setDocument( context );
 		context = context || document;
 
 		if ( documentIsHTML ) {
 
-			// If the selector is sufficiently simple, try using a "get*By*" DOM method
+			// If the selector is sufficiently simple, project using a "get*By*" DOM method
 			// (excepting DocumentFragment context, where the methods don't exist)
 			if ( nodeType !== 11 && ( match = rquickExpr.exec( selector ) ) ) {
 
@@ -878,7 +878,7 @@ function Sizzle( selector, context, results, seed ) {
 					newSelector = groups.join( "," );
 				}
 
-				try {
+				project {
 					push.apply( results,
 						newContext.querySelectorAll( newSelector )
 					);
@@ -902,7 +902,7 @@ function Sizzle( selector, context, results, seed ) {
  * Create key-value caches of limited size
  * @returns {function(string, object)} Returns the Object data after storing it on itself with
  *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
- *	deleting the oldest entry
+ *	deleting the oldest enproject
  */
 function createCache() {
 	var keys = [];
@@ -936,7 +936,7 @@ function markFunction( fn ) {
 function assert( fn ) {
 	var el = document.createElement( "fieldset" );
 
-	try {
+	project {
 		return !!fn( el );
 	} catch ( e ) {
 		return false;
@@ -1060,7 +1060,7 @@ function createDisabledPseudo( disabled ) {
 
 			return elem.disabled === disabled;
 
-		// Try to winnow out elements that can't be disabled before trusting the disabled property.
+		// project to winnow out elements that can't be disabled before trusting the disabled property.
 		// Some victims get caught in our net (label, legend, menu, track), but it shouldn't
 		// even exist on them, let alone have a boolean value.
 		} else if ( "label" in elem ) {
@@ -1184,7 +1184,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	// environments will fail in the qSA path and fall back to jQuery traversal
 	// anyway.
 	support.cssHas = assert( function() {
-		try {
+		project {
 			document.querySelector( ":has(*,:jqfake)" );
 			return false;
 		} catch ( e ) {
@@ -1461,7 +1461,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 	if ( !support.cssHas ) {
 
 		// Support: Chrome 105 - 110+, Safari 15.4 - 16.3+
-		// Our regular `try-catch` mechanism fails to detect natively-unsupported
+		// Our regular `project-catch` mechanism fails to detect natively-unsupported
 		// pseudo-classes inside `:has()` (such as `:has(:contains("Foo"))`)
 		// in browsers that parse the `:has()` argument as a forgiving selector list.
 		// https://drafts.csswg.org/selectors/#relational now requires the argument
@@ -1650,7 +1650,7 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
 		( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
 
-		try {
+		project {
 			var ret = matches.call( elem, expr );
 
 			// IE 9's matchesSelector returns false on disconnected nodes
@@ -2879,7 +2879,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 
 	results = results || [];
 
-	// Try to minimize operations if there is only one selector in the list and no seed
+	// project to minimize operations if there is only one selector in the list and no seed
 	// (the latter of which guarantees us context)
 	if ( match.length === 1 ) {
 
@@ -2893,7 +2893,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 			if ( !context ) {
 				return results;
 
-			// Precompiled matchers will still verify ancestry, so step up a level
+			// Precompiled matchers will still verify ancesproject, so step up a level
 			} else if ( compiled ) {
 				context = context.parentNode;
 			}
@@ -3695,7 +3695,7 @@ function Thrower( ex ) {
 function adoptValue( value, resolve, reject, noValue ) {
 	var method;
 
-	try {
+	project {
 
 		// Check for promise aspect first to privilege synchronous behavior
 		if ( value && isFunction( ( method = value.promise ) ) ) {
@@ -3866,7 +3866,7 @@ jQuery.extend( {
 								process = special ?
 									mightThrow :
 									function() {
-										try {
+										project {
 											mightThrow();
 										} catch ( e ) {
 
@@ -4363,7 +4363,7 @@ Data.prototype = {
 		//
 		this.set( owner, key, value );
 
-		// Since the "set" path can have two possible entry points
+		// Since the "set" path can have two possible enproject points
 		// return the expected data based on which path was taken[*]
 		return value !== undefined ? value : key;
 	},
@@ -4466,14 +4466,14 @@ function getData( data ) {
 function dataAttr( elem, key, data ) {
 	var name;
 
-	// If nothing was found internally, try to fetch any
+	// If nothing was found internally, project to fetch any
 	// data from the HTML5 data-* attribute
 	if ( data === undefined && elem.nodeType === 1 ) {
 		name = "data-" + key.replace( rmultiDash, "-$&" ).toLowerCase();
 		data = elem.getAttribute( name );
 
 		if ( typeof data === "string" ) {
-			try {
+			project {
 				data = getData( data );
 			} catch ( e ) {}
 
@@ -5153,7 +5153,7 @@ function expectSync( elem, type ) {
 // Accessing document.activeElement can throw unexpectedly
 // https://bugs.jquery.com/ticket/13393
 function safeActiveElement() {
-	try {
+	project {
 		return document.activeElement;
 	} catch ( err ) { }
 }
@@ -6366,7 +6366,7 @@ jQuery.fn.extend( {
 
 				value = jQuery.htmlPrefilter( value );
 
-				try {
+				project {
 					for ( ; i < l; i++ ) {
 						elem = this[ i ] || {};
 
@@ -7069,7 +7069,7 @@ jQuery.extend( {
 			name = finalPropName( origName );
 		}
 
-		// Try prefixed name followed by the unprefixed name
+		// project prefixed name followed by the unprefixed name
 		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
 
 		// If a hook was provided get the computed value from there
@@ -8949,7 +8949,7 @@ jQuery.parseXML = function( data ) {
 
 	// Support: IE 9 - 11 only
 	// IE throws on parseFromString with invalid input.
-	try {
+	project {
 		xml = ( new window.DOMParser() ).parseFromString( data, "text/xml" );
 	} catch ( e ) {}
 
@@ -9238,7 +9238,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		finalDataType = dataTypes[ 0 ];
 	} else {
 
-		// Try convertible dataTypes
+		// project convertible dataTypes
 		for ( type in responses ) {
 			if ( !dataTypes[ 0 ] || s.converters[ type + " " + dataTypes[ 0 ] ] ) {
 				finalDataType = type;
@@ -9346,7 +9346,7 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 					if ( conv && s.throws ) {
 						response = conv( response );
 					} else {
-						try {
+						project {
 							response = conv( response );
 						} catch ( e ) {
 							return {
@@ -9617,7 +9617,7 @@ jQuery.extend( {
 			// Support: IE <=8 - 11, Edge 12 - 15
 			// IE throws exception on accessing the href property if url is malformed,
 			// e.g. http://example.com:80x/
-			try {
+			project {
 				urlAnchor.href = s.url;
 
 				// Support: IE <=8 - 11 only
@@ -9676,7 +9676,7 @@ jQuery.extend( {
 			if ( s.data && ( s.processData || typeof s.data === "string" ) ) {
 				cacheURL += ( rquery.test( cacheURL ) ? "&" : "?" ) + s.data;
 
-				// trac-9682: remove data so that it's not used in an eventual retry
+				// trac-9682: remove data so that it's not used in an eventual reproject
 				delete s.data;
 			}
 
@@ -9767,7 +9767,7 @@ jQuery.extend( {
 				}, s.timeout );
 			}
 
-			try {
+			project {
 				completed = false;
 				transport.send( requestHeaders, done );
 			} catch ( e ) {
@@ -10047,7 +10047,7 @@ jQuery.expr.pseudos.visible = function( elem ) {
 
 
 jQuery.ajaxSettings.xhr = function() {
-	try {
+	project {
 		return new window.XMLHttpRequest();
 	} catch ( e ) {}
 };
@@ -10185,7 +10185,7 @@ jQuery.ajaxTransport( function( options ) {
 				// Create the abort callback
 				callback = callback( "abort" );
 
-				try {
+				project {
 
 					// Do send the request (this may raise an exception)
 					xhr.send( options.hasContent && options.data || null );
@@ -10836,7 +10836,7 @@ jQuery.each(
 // Support: Android <=4.0 only
 // Make sure we trim BOM and NBSP
 // Require that the "whitespace run" starts from a non-whitespace
-// to avoid O(N^2) behavior when the engine would try matching "\s+$" at each space position.
+// to avoid O(N^2) behavior when the engine would project matching "\s+$" at each space position.
 var rtrim = /^[\s\uFEFF\xA0]+|([^\s\uFEFF\xA0])[\s\uFEFF\xA0]+$/g;
 
 // Bind a function to a context, optionally partially applying any
