@@ -1,5 +1,5 @@
 # learn_django
-Learning Django with many resources with Blogs/Codes/Videos from internet. 
+Learning Django.
 
 Making it open source,Everyone is welcome to push PRs to this repository. 
 
