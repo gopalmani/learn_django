@@ -3,9 +3,12 @@
 Learning Django.
 
 Making it open source,Everyone is welcome to push PRs to this repository. 
+
 To understand this project:
-take clone of the repo and Go to Projects Folder inside New and run command > python3 manage.py runserver
-then head to localhost://3000 and check this project. 
+take clone of the repo 
+and Go to Projects Folder inside New 
+and run command > python3 manage.py runserver
+then head to localhost://3000 on your browser and check this project. 
 
 Every minute detail has been mentioned into the notion notes. Please go through it if you need any clarification. 
 
