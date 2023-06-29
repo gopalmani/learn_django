@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p> The quesyset object: </p>
+
+{{ myusers }}
+
+<p>Loop through the items : </p>
+<table border='1'>
+    {% for x in myusers %}
+    <tr>
+        <td>{{ x }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
