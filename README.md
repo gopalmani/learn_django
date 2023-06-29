@@ -8,7 +8,7 @@ Making it open source,Everyone is welcome to push PRs to this repository.
 Branch Details : 
 This project for now has four branches : 
 1. Main ( will be pushing best codes from Devlopment, authentication, base.)- This is under dev for now. 
-2. Devlopment (codes pushed for testing befor main)
+2. Devlopment (code will be pushed for testing before merging it to main)
 3. Authentication (creating a reliable and scalable authentication backend in django -WIP)
 4. basev1 : (code in this branch can be used to understand Django from scrath) that goes with the notion notes mentioned. 
 
