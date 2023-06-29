@@ -3,6 +3,8 @@
 Learning Django.
 
 Making it open source,Everyone is welcome to push PRs to this repository. 
+
+
 Branch Details : 
 This project for now has four branches : 
 1. Main ( will be pushing best codes from Devlopment, authentication, base.)- This is under dev for now. 
