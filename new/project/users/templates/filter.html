@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p> The query set data : </p>
+{{ myusers }}
+
+    {% for x in myusers %}
+        <h2> we show Details here by filtering data using filter() method</h2>
+        <h3>My Details are : {{x}} </h3>
+    {% endfor %}
+
+</body>
+</html>

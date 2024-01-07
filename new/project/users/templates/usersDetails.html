@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ myuser.firstname }} {{ myuser.lastname }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ myuser.firstname }} {{ myuser.lastname }}</h1>
+
+  <p>Phone {{ myuser.phone }}</p>
+  <p>Member since: {{ myuser.joined_date }}</p>
+
+  <p>Back to <a href="/users">Users</a></p>
+
+{% endblock %}
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Users</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>{{ myuser.firstname }} {{ myuser.lastname }}</h1>-->
+
+<!--<p>Phone: {{ myuser.phone }}</p>-->
+<!--<p>User since: {{ myuser.joined_date }}</p>-->
+
+<!--<p>Back to <a href="/users">Users</a></p>-->
+<!--</body>-->
+<!--</html>-->

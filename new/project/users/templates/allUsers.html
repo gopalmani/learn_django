@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+{% block title %}
+    List of all users
+{% endblock %}
+
+
+{% block content %}
+  <h1>Users</h1>
+  <p><a href="/">HOME</a></p>
+
+  <ul>
+    {% for x in myusers %}
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Users Details</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>-->
+<!--    "Users list"-->
+<!--</h1>-->
+<!--<ul>-->
+
+<!--    {% for x in myusers %}-->
+<!--    <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>-->
+<!--&lt;!&ndash;    <li><a>href=details/{{ x.firstname }} {{ x.lastname }}</a></li>&ndash;&gt;-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+<!--</body>-->
+<!--</html>-->
