@@ -27,3 +27,5 @@ I have compiled this notes after many days of research, hit and try and coming u
 
 https://evergreen-passenger-5cb.notion.site/Django-Learning-notes-8a726c943b994e2999d09c5d132ebfcb?pvs=4
 
+Need to make few changes to the proj, then push it 
+
